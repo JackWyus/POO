@@ -1,0 +1,64 @@
+<html>
+    <body>
+        <script>
+           var alunos = ["Vini","Jose"]
+           console.log(alunos[1])
+
+           /* Objeto é semelhante ao Array na sua estrutura de construção,sendo que sua diferença se dá pela "chaves{}" e não pelo "colchete[]" */
+           /* Na Array, podemos acessar um determinado valor atráves do Index e no Objeto, vamos usar o que chamamos de "chave de acesso" */
+           /* Isso sempre vai funcionar da seguinte forma, uma chave e um valor  --> x:"y",*/
+
+           /* Vamos declarar um Objeto */
+           var aluno = {
+                nome: "Vinicios",
+                idade: 21
+            };
+
+            /*Vamos acessar as propriedades do nosso aluno da seguinte forma*/
+
+            console.log(aluno.nome); /* solicitando o nome do aluno */
+            console.log(aluno.idade);/* solicitando a idade do aluno */
+
+            console.log(aluno); /* Se você der um console no objeto,ele vai lhe retornar infomações referente a toda a estrutura */
+            
+            // outra forma de chamar o valor da propriedade
+
+            console.log(aluno["nome"]);// queremos a propriedade que está dentro da "chave nome"
+
+
+            /*A propriedade funciona como se fosse uma variável, ela recebe os mesmo valores(string,number,bolean,array..) que a mesma pode receber,mas no contexto de um objeto, o nome que damos é propriedade*/
+
+            // Vamos criar um objeto que contenha um array dentro e vamos acessar baseado na sua chavê
+
+            var comida = {
+                carboidratos:   ["Arroz", "Feijão", "Purê de Batata"], 
+                proteinas:      ["Ovo", "Peito de Frango","Whey"],
+            };
+            console.log(comida.carboidratos[2])
+
+            //Podemos escrever isso da seguinte forma também
+
+            console.log(comida["proteinas"][1]);
+
+
+            //Criamos um objeto e suas propriedades,mas mesmo depois de criado, podemos alterar sua propriedade após sua declaração da seguinte forma.
+
+            comida.Vitaminas = ["A","B","C","D","E"];
+            console.log(comida)
+            
+            //Outra maneira de adicionarmos uma propriedade ao objeto depois de declarado.
+
+            comida["kcal"] = ["50kcal","100kcal","250kcal"]; //ou apenas comida["kcal"] = "50kcal"
+            console.log(comida)
+
+
+
+            // Outra forma de criar um Objeto
+
+            var bebidas = new Object();
+            bebidas.frutas = "Laranja";
+            bebidas.notas = [0,1,2,3,4,5,6,7,8,9,10]
+            console.log(bebidas)
+        </script>
+    </body>
+</html>

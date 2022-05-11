@@ -1,0 +1,37 @@
+<html>
+    <body>
+        <script>
+            //Classes também é orientação a objetos,mas é uma maneira mais fácil de retratar 
+
+            class Animal{
+                constructor(nome){
+                    this.nome = nome;
+                }
+                /*Isso abaixo é um método e não uma função,pois está dentro do objeto*/
+                printNome(){
+                    return this.nome
+                }
+            }
+
+            /*Temos a class Animal e depois temos a class Cachorro,o 'extends' na orientação a objetos,significa = "Declara essa class "Cachorro" e herda os valores(atributos,print..) que existem em "Animal" "*/
+            class Cachorro extends Animal{
+                constructor(nome){
+                    super(nome);/*O "super()" está chamando o construtor da class Pai(Animal) e o parametro é o "super(nome)"*/
+                    this.raca = "bulldog";
+                }
+                printRaca(){
+                    return this.raca;
+                }
+            }
+            
+
+            cachorro = new Cachorro("Pastor Alemão")
+
+
+            /*Instânciar é criar um objeto */
+            /*animal = new Animal('Gato');*/
+           /* console.log(animal.printNome());*/
+           alert(cachorro.printNome())
+        </script>
+    </body>
+</html>

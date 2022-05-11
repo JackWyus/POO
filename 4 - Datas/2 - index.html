@@ -1,0 +1,23 @@
+<html>
+    <body>
+        <script>
+            /* Manipulando datas */
+
+            var date = new Date('05/11/2022');  /* O padrão de data reconhecido pelo JavaScript é o americano,onde temos; 'Mês/data/Ano' */
+           console.log(date.getDate());
+
+            //Vamos Aprender a Calcular difença de Datas em determinado intervalo de tempo
+            
+            var date1 = new Date('05/15/2022');
+            var date2 = new Date('05/20/2022');//A diferença de datas é de 5 nesse exemplo
+
+            /* 
+                O método getTime fornece em milesegundos a duração,nesse caso, do dia 
+            */
+            /*Vamos calcular a diferença em milesegundos de cada dia e dividir por 86400000 para saber a diferença de dias*/
+            var diferencaDia = ((date2.getTime() - date1.getTime())/86400000);
+            console.log(diferencaDia)
+
+        </script>
+    </body>
+</html>

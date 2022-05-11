@@ -1,0 +1,17 @@
+<html>
+    <body>
+        <script>
+            function pessoa(){
+                this.nome = "Vinicios";
+                //this.nome é uma variável, mas estamos deixando esse tipo de variável, para esse objeto em questõa
+                //var nome = "Vinicios;"
+            }
+
+            var pessoa = new pessoa();//estamos criando um novo objeto chamado pessoa.
+            var pessoa2 = new pessoa();
+
+            pessoa.nome = "Matheus"
+            alert(pessoa2.nome)
+        </script>
+    </body>
+</html>

@@ -1,0 +1,123 @@
+<html>
+
+<body>
+    <script>
+        /*
+            > Os objetos também podem possuir métodos que nada mais é do que funções
+            > Quando um objeto possui uma variável(chamamos de propriedade) e quando um objeto possui uma função(chamamos de Método)
+
+        // Objetos
+
+         var alunoI = {
+            nome: "Vinicios",
+            notas: [6, 9],
+
+                > Vamos criar um método para o nosso objeto "aluno"
+                > temos a propriedade media(chave) que vai receber uma função anonima,no qual a mesma vai receber como parametro numero1 e numero2,retornara na media aritmética das duas notas 
+        
+            media: function (n1, n2) {
+                return (n1 + n2) / 2;
+            }
+        };
+
+        var alunoII = {
+            nome: "Matheus",
+            notas: [6, 8],
+
+            media: function (n1, n2) {
+                return (n1 + n2) / 2;
+            }
+        };
+
+        // Console
+
+        console.log(alunoI.nome);
+        console.log("Notas: " + alunoI.notas);
+        console.log("Média: " + alunoI.media(alunoI.notas[0], alunoI.notas[1]));
+
+        console.log("------------")
+
+        console.log(alunoII.nome);
+        console.log("Notas: " + alunoII.notas);
+        console.log("Média: " + alunoII.media(alunoII.notas[0], alunoII.notas[1]));
+
+        console.log("------------")
+        */
+
+        // Funções
+
+        /*  
+
+            Se quisermos alterar o método da média e no caso existir muito alunos, isso demoraria muito para fazer, uma forma rápida de solucionar isso é criando uma função.
+
+            1º Primeira forma
+
+        var mediaAritmetica = function (n1, n2) {
+            return ((n1 * 2) + n2) / 3;
+        }
+
+            2º Segunda forma
+
+        function calMedia(n1, n2) {
+            return ((n1 * 2) + n2) / 3;
+        }
+
+        //Objetos 
+
+        var alunoI = {
+            nome: "Vinicios",
+            notas: [5, 9],
+
+            media: calMedia,
+        };
+
+        var alunoII = {
+            nome: "Matheus",
+            notas: [6, 8],
+
+            media: mediaAritmetica,
+        };
+
+
+        // Console
+
+            console.log(alunoI.nome);
+            console.log("Notas: " + alunoI.notas);
+            console.log("Média: " + alunoI.media(alunoI.notas[0], alunoI.notas[1]));
+
+            console.log("------------")
+
+            console.log(alunoII.nome);
+            console.log("Notas: " + alunoII.notas);
+            console.log("Média: " + alunoII.media(alunoII.notas[0], alunoII.notas[1]));
+
+            console.log("------------")
+        */
+        // Vamos simplificar a seguinte parte " console.log("Média: " + alunoI.media(alunoI.notas[0], alunoI.notas[1])); " sem haver necessidade de passar novamente os valores.
+
+        
+        var alunoI = {
+            nome: "Vinicios",
+            notas: [6, 9],
+            media: calmedia  
+                //function (n1, n2) {
+                //return (this.notas[0] + this.notas[1]) / 2;
+                /*
+                    O javascrit não reconhe dentro dessa função, o que são essas "notas", para a gente conseguir identificar elas,precisamos usar a palavra "this".
+                    this significa "isso",se eu falar para você, por exemplo, "hoje eu comprei isso x --(celular)" --> Você não sabe do que eu estou falando, vc só sabe pq está vendo ou "hoje eu comprei isso x --(hd externo)".
+                    o this vai depender do contexto que ele está inserido, no caso desse metodo,ele faz parte do objeto alunoI, o this vai ser esse objeto.
+                    this é sempre utilizado no contexto do objeto
+                */
+            }
+        
+        //essa função só vai funcionar se ela estiver atribuida a uma propreidade de um objeto, no caso, aluno.
+        function calmedia(){
+            return((this.notas[0] + this.notas[1]) / 2);
+        }
+
+        console.log(alunoI.media())
+        //calmedia() teste para provar que essa função sem o objeto não funciona corretamente.
+    </script>
+</body>
+
+</html>
